@@ -8,8 +8,8 @@ import { sql } from "@vercel/postgres";
 import { redirect } from "next/navigation";
 
 
-export default async function StudentRegistrationForm() {
- async function registerStudent(formData: FormData) {
+export default async function DriverRegistrationForm() {
+ async function registerDriver(formData: FormData) {
   'use server'
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
@@ -27,7 +27,7 @@ export default async function StudentRegistrationForm() {
           <CardTitle className="text-2xl font-bold text-center">Cadastro de Motorista</CardTitle>
         </CardHeader>
         <CardContent>
-          <form action={registerStudent} className="space-y-4">
+          <form action={registerDriver} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Nome</Label>
               <Input type="text" id="name" name="name" required />
