@@ -13,10 +13,10 @@ export default async function StudentRegistrationForm() {
   'use server'
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
-  await sql`INSERT INTO  students (name, email) VALUES (${name}, ${email})` 
-  console.log('Estudante registrado:', { name, email })
+  await sql`INSERT INTO  drivers (name, email) VALUES (${name}, ${email})` 
+  console.log('Motorista Registrado:', { name, email })
  
-  redirect('/dashboard/student/list');
+  redirect('/dashboard/driver/list');
  
 }
 
@@ -24,7 +24,7 @@ export default async function StudentRegistrationForm() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <Card className="w-[350px]">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Cadastro de Estudante</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">Cadastro de Motorista</CardTitle>
         </CardHeader>
         <CardContent>
           <form action={registerStudent} className="space-y-4">
